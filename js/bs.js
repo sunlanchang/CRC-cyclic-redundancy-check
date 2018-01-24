@@ -60,7 +60,7 @@ $(document).ready(function () {
         }
         $("#shuju2").text(binToHex($("#shuju").val()));
         $("#fcs").text(binToHex(crc));
-        var data = "<data>0x7E,0xFF,0x03" + "," + binToHex($("#select").val()) + "," + binToHex($("#shuju").val()) + "," + binToHex($("#fcs").val()) + "," + "0x7E</data>";
+        var data = "<data><biaozhi>0x7E</biaozhi><dizhi>0xFF</dizhi><kongzhi>0x03</kongzhi>" + "<xieyi>" + binToHex($("#select").val()) + "</xieyi><Data>" + binToHex($("#shuju").val()) + "</Data><fcs>" + binToHex($("#fcs").val()) + "</fcs><biaozhi>" + "0x7E</biaozhi></data>";
         $("#save").attr("href", "data:text/html;charset=utf-8," + data);
     });
     $("#calcCRC").click(function () {
